@@ -1,0 +1,12 @@
+
+     {% extends "gestion/main.html" %}
+{%block content %}
+
+    <form method="post" action="/gestion/traitementupdateenseignant/{{id}}/">
+    {% csrf_token %}
+    {{ lform.as_p }}
+
+        <input type="submit" value="envoyer les données">
+    </form>
+
+{% endblock %}

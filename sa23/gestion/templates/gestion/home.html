@@ -1,0 +1,55 @@
+
+
+{% extends "gestion/main.html" %}
+
+
+
+
+
+
+
+
+{% block content %}
+
+
+
+{% for l in liste3 %}
+
+
+
+<ul class="ul1">
+<h2> code de la ressourse : {{l.code_ressource}}</h2>
+
+<h2>  nom de la ressource : {{l.nom}}</h2>
+
+<h2>   description : {{l.descriptif}}</h2>
+
+<h2> coefficient de la ressource : {{l.coefficient}} </h2>
+
+<li class="li1">
+        <button name="button"><a href="/gestion/affiche_res/{{l.id}}"> afficher les détails | </a></button>
+        <button name="button"><a href="/gestion/deleteressources/{{l.id}}"> effacer | </a></button>
+        <button name="button"><a href="/gestion/updateressources/{{l.id}}"> update </a></button>   </li>
+</ul>
+{%endfor%}
+
+{% for l in liste4 %}
+
+<ul class="ul1">
+
+<h1>  Nom enseignant : {{l.nom}}
+prenom enseignant : {{l.prenom}} </h1>
+
+    <li class="li1">
+        <button name="button"><a href="/gestion/affiche/{{l.id}}"> afficher les détails | </a></button>
+        <button name="button"><a href="/gestion/deleteenseignant/{{l.id}}"> effacer | </a></button>
+        <button name="button"><a href="/gestion/updateenseignant/{{l.id}}"> update </a></button>   </li>
+</ul>
+
+{%endfor%}
+{% endblock %}
+
+
+{% block navi %}
+
+{% endblock %}

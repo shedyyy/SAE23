@@ -1,0 +1,46 @@
+
+
+     {% extends "gestion/main.html" %}
+
+
+
+{% block content %}
+
+
+ {% for l in liste7 %}
+
+
+
+<ul class="ul1">
+<h2>   nom de l'examen : {{l.titre}}</h2>
+    <br>
+
+<h2>   date prevue pour l'examen : {{l.date}}</h2>
+ <br>
+
+<h2> coefficient pour cette examen : {{l.coefficient}}</h2>
+     <br>
+
+<h1>   {{l.ressources}}</h1>
+
+
+    <li class="li1">
+
+        <button name="button"><a href="/gestion/affiche_exa/{{l.id}}"> afficher les détails | </a></button> <br>
+        <button name="button"><a href="/gestion/delete_exa/{{l.id}}"> effacer | </a></button> <br>
+<button name="button"><a href="/gestion/update_exa/{{l.id}}"> update </a></button>   </li>
+
+</li>
+
+</ul>
+
+  {%endfor%}
+
+
+
+{% endblock %}
+
+
+{% block navi %}
+ <li> <a href="/gestion/ajout_exa/"> ajouter un examens | </a></li>
+{% endblock %}

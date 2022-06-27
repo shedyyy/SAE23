@@ -1,0 +1,47 @@
+
+{% extends "gestion/main.html" %}
+
+
+
+{% block content %}
+
+
+<h1><button name="button"><a href="/gestion/aUnite/"> Ajout d'une competence</a></button> <br></h1>
+
+
+{% for l in UE %}
+
+
+
+<ul class="ul1">
+
+<h2> code de la competence : {{l.code}}</h2>
+
+<h2>  nom de la competence : {{l.nom}}</h2>
+
+<h2>   competence du semestre : {{l.semestre}}</h2>
+
+<h2> Competence : {{l.credit}} </h2>
+    <li class="li1">
+
+        <button name="button"><a href="/gestion/affiche_ue/{{l.id}}"> afficher les détails | </a></button>
+        <button name="button"><a href="/gestion/delUE/{{l.id}}"> effacer | </a></button>
+        <button name="button"><a href="/gestion/UEupdate/{{l.id}}"> update </a></button>   </li>
+
+
+
+</ul>
+
+  {%endfor%}
+
+
+
+
+
+
+
+
+{% endblock %}
+
+
+

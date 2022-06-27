@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'gestion/style.css' %}">
+
+
+<title>{% block title %}L{% endblock %} </title>
+    <meta charset="UTF-8" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet" />
+
+
+    <title>Gestion de note</title>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">
+      <h2>Gestion de note</h2>
+    </div>
+
+<ul>
+<li><a href="/gestion/home">Home <a> </li>
+<li><a href="/gestion/examens">examens  </a></li>
+<li><a href="/gestion/ajout_note">Ajout note  </a></li>
+<li><a href="/gestion/ajoutressources"> ajout Ressources  </a></li>
+<li><a href="/gestion/ajoutenseignant">ajout Enseignant  </a></li>
+<li><a href="/gestion/UE">Competence  </a></li>
+<li><a href="/gestion/etudiant/">Etudiant  </a></li>
+
+{% block navi %}
+
+{% endblock %}
+
+</ul>
+<div class="menu-bars">
+  <input type="checkbox">
+<span></span>
+<span></span>
+<span></span>
+
+</div>
+</nav>
+
+
+<script>
+
+const menuToggle= document.querySelector(".menu-bars");
+const nav = document.querySelector("nav ul");
+
+
+menuToggle.addEventListener("click", () => {
+  nav.classList.toggle("slide");
+  });
+
+</script>
+
+  <div class="main">
+    {% block content %}
+
+    {% endblock%}
+  </div>
+  </body>
+</html>
+

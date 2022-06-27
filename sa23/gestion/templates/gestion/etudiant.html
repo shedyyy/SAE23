@@ -1,0 +1,38 @@
+
+     {% extends "gestion/main.html" %}
+
+
+
+{% block content %}
+<h2><button name="button"><a href="/gestion/ajout/{{etudiant.id}}"> Ajouter un etudiant</a></button> <br></h2>
+
+<ul class="ul3">
+{% for l in liste_etu %}
+<div class="grid-container">
+<div class="grid-item">
+{% if l.photo %}
+<h1>   {{l.nom}}</h1>
+<img src="{{l.photo.url}} " class="img1">
+{% endif %}
+<p> nom de l'etudiant : {{l.nom}}</p>
+<p>  Groupe : {{l.groupe}}</p>
+<p>Email : {{l.email}} </p>
+<li class="li1">
+<button name="button"><a href="/gestion/affiche/{{l.id}}"> afficher les détails  </a></button>
+<button name="button"><a href="/gestion/delete/{{l.id}}"> effacer  </a></button>
+<button name="button"><a href="/gestion/update/{{l.id}}"> update </a></button>
+<button name="button"><a href="/gestion/note_csv/{{l.id}}"> CSV </a></button>
+<button name="button"><a href="/gestion/notes_pdf/{{l.id}}" target="blank"> PDF </a></button>
+</li>
+</div>
+</div>
+{%endfor%}
+{% endblock %}
+
+<h1>{{etudiants.nom}}</h1>
+<h1>{{etudiants.email}}</h1>
+{% for l in notes %}
+<h1>{{l.note}}</h1>
+<h1>{{l.etudiant}}</h1>
+<h1>{{l.appreciation}}</h1>
+{%endfor%}

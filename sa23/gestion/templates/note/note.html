@@ -1,0 +1,42 @@
+
+{% extends "gestion/main.html" %}
+
+
+
+
+
+
+
+
+{% block content %}
+
+
+<h1><button name="button"><a href="/gestion/ajout_note/"> Ajout d'une note</a></button> <br></h1>
+ {% for l in liste_note %}
+
+
+
+<ul class="ul1">
+<h1>   {{l.note}}</h1>
+
+    <li class="li1">
+
+        <button name="button"><a href="/gestion/affiche_note/{{l.id}}"> afficher les détails | </a></button> <br>
+        <button name="button"><a href="/gestion/delete_note/{{l.id}}"> effacer | </a></button> <br>
+<button name="button"><a href="/gestion/update_note/{{l.id}}"> update </a></button>   </li>
+
+
+
+</ul>
+
+  {%endfor%}
+
+
+
+
+
+
+{% endblock %}
+
+
+

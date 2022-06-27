@@ -1,0 +1,42 @@
+
+{% extends "gestion/main.html" %}
+
+
+
+
+
+
+
+
+{% block content %}
+
+
+<div class="ajout">
+<button name="button"><a href="/gestion/ajout_exa/{{ressources.id}}"> ajouter un examens </a></button>
+</div>
+ {% for l in liste1 %}
+
+<ul class="ul1">
+<h1>   L'examen de {{l.titre}}</h1>
+<h1>  Date prévue pour l'examen {{l.date}}</h1>
+<h1>  coefficient : {{l.coefficient}}</h1>
+<h1> Elle fait partie de la ressource {{l.ressources}}</h1>
+    <li class="li1">
+
+        <button name="button"><a href="/gestion/affiche_exa/{{l.id}}"> afficher les détails | </a></button> <br>
+        <button name="button"><a href="/gestion/delete_exa/{{l.id}}"> effacer | </a></button> <br>
+<button name="button"><a href="/gestion/update_exa/{{l.id}}"> update </a></button>   </li>
+
+
+
+</ul>
+
+  {%endfor%}
+
+
+
+
+
+{% endblock %}
+
+

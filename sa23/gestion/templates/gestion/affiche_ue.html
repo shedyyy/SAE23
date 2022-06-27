@@ -1,0 +1,37 @@
+
+
+     {% extends "gestion/main.html" %}
+
+
+
+{% block content %}
+
+
+
+
+ {% for l in ressources %}
+
+
+
+<ul class="ul1">
+<h1>Cette competence fait partie de la ressource : {{l.nom}}<br>
+
+Descriptif :{{l.descriptif}}
+
+</h1>
+<h1>Le nombre de crédit ECTS : {{UE.credit}}</h1>
+    <li class="li1">
+   <button name="button"><a href="/gestion/affiche_ue{{l.id}}"> afficher les détails  </a></button> <br>
+        <button name="button"><a href="/gestion/deleteressources/{{l.id}}"> effacer  </a></button> <br>
+<button name="button"><a href="/gestion/updateressources/{{l.id}}"> update </a></button>   </li>
+
+</li>
+
+</ul>
+
+  {%endfor%}
+
+
+
+{% endblock %}
+

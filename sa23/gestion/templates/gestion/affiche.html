@@ -1,0 +1,57 @@
+
+
+     {% extends "gestion/main.html" %}
+
+
+{% block content %}
+
+
+
+
+<h1>
+
+
+
+
+</h1>
+
+<h1>{{etudiants.nom}}</h1>
+<div class="Titre">
+<h3>Les notes de l'etudiant</h3>
+</div>
+<table class="table">
+
+<tr>
+<th>Examens</th>
+<th> note</th>
+
+</tr>
+{% for l in notes %}
+<tr>
+<td>{{l.examens}}</td>
+<td>{{l.note}}/20</td>
+
+</tr>
+
+{%endfor%}
+<td>Moyenne de l'etudiant </td>
+<td> {{moyenne}}</td>
+
+
+</table>
+
+
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
